@@ -3,9 +3,14 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithNoMoney(bankAccounts) => ['Kevin', 'Jon']
 
-export function getClientWithNoMoney(array) {
-  // Your code goes here...
-
+export function getClientWithNoMoney(bankAccounts) {
+  let clientsWithNoMoneyNames = [];
+  for (let client of bankAccounts) {
+    if (client.balance === 0) {
+      clientsWithNoMoneyNames.push(client.name);
+    }
+  }
+  return clientsWithNoMoneyNames;
 }
 
 // === TEST YOURSELF ===

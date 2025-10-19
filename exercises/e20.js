@@ -1,4 +1,3 @@
-
 // EXERCISE 20
 // Return and array of 2 arrays
 // (1 - an array of names that contain "a" in name, 2 - an array of names that don't have 'a' in name)
@@ -6,10 +5,23 @@
 // NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
 
 export function separateNamesWithAFromRest(array) {
-  // Your code goes here...
-
+  let namesWithA = [];
+  let namesWithoutA = [];
+  for (let i = 0; i < array.length; i++) {
+    let hasA = false;
+    for (let char of array[i]) {
+      if (char === "a" || char === "A") {
+        hasA = true;
+      }
+    }
+    if (hasA) {
+      namesWithA.push(array[i]);
+    } else {
+      namesWithoutA.push(array[i]);
+    }
+  }
+  return [namesWithA, namesWithoutA];
 }
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-20"
